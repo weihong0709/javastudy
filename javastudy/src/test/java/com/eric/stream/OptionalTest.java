@@ -61,4 +61,13 @@ public class OptionalTest {
         //存在则进行处理
         optional.ifPresent(System.out::println);
     }
+    /**
+     * 用于对 Optional 中的值进行映射处理，从而避免了大量 if 语句嵌套，多个 map 组合成链，
+     * 只需对最终的结果进行操作，中间过程中如果存在 null 值，之后的 map 不会执行
+     */
+    @Test
+    public void testMap() {
+        Student student = new Student();
+        assertEquals("",OptionalExample.getCourseName(student));
+    }
 }
