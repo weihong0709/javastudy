@@ -68,6 +68,37 @@ public class OptionalTest {
     @Test
     public void testMap() {
         Student student = new Student();
+        //使用传统方式
         assertEquals("",OptionalExample.getCourseName(student));
+        //使用Optional方式
+        Optional<Student> optionalStudent = Optional.of(student);
+        assertEquals("",OptionalExample.getCourseName(optionalStudent));
+        Course course = new Course();
+        course.setName("math");
+        course.setScore(10);
+        student.setCourse(course);
+        assertEquals("math",OptionalExample.getCourseName(student));
+        assertEquals("math",OptionalExample.getCourseName(optionalStudent));
+
+    }
+    /**
+     * 通过filter对optional中的值进行过滤，如果不在值就返回empty，存在就进行条件判断，不存在符合的值也返回empty
+     * empty的作用也是可以省去if/else语句
+     */
+    @Test
+    public void testFilter() {
+        Student student = new Student();
+        Course course = new Course();
+        course.setName("math");
+        course.setScore(10);
+        student.setCourse(course);
+        //使用Optional方式
+        Optional<Student> optionalStudent = Optional.of(student);
+        //进行条件判断的函数式接口表达式，需要注意空指针异常 Optional只判断里面存储的元素是否为空，不判断里面包含的元素是否为空
+        Optional<Student> resultEmpty= optionalStudent.filter((temp)->temp.getCourse().getName().equals("math2"));
+        assertFalse(resultEmpty.isPresent());
+
+        Optional<Student> resultNotEmpty= optionalStudent.filter((temp)->temp.getCourse().getName().equals("math"));
+        assertTrue(resultNotEmpty.isPresent());
     }
 }
