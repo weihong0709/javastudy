@@ -2,6 +2,7 @@ package com.eric.stream;
 
 
 import org.junit.jupiter.api.Test;
+import org.junit.platform.commons.util.Preconditions;
 
 import java.util.NoSuchElementException;
 import java.util.Optional;
