@@ -63,4 +63,49 @@ public class FutureExample {
             e.printStackTrace();
         }
     }
+    public static void futureThree() {
+
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+        Runnable runnable = () -> {
+            Thread.sleep(10000);
+            return "thread 1";
+        };
+        CompletableFuture completableFuture = CompletableFuture.runAsync(runnable);
+        completableFuture.whenComplete((t)->{
+            return "test";
+        })
+        CompletionService<String> completionService = new ExecutorCompletionService(executorService);
+
+        Callable<String> futrueOne = () -> {
+            Thread.sleep(10000);
+            return "thread 1";
+        };
+        Callable<String> futrueTwo = () -> {
+            Thread.sleep(20000);
+            return "thread 2";
+        };
+
+        Callable<String> futrueThree = () -> {
+            Thread.sleep(30000);
+            return "thread 3";
+        };
+
+        completionService.submit(futrueThree);
+        completionService.submit(futrueOne);
+        completionService.submit(futrueTwo);
+
+        try {
+            for (int i = 0; i < 3; i++) {
+                Future<String> temp = completionService.take();
+                System.out.println(temp.get());
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
 }
