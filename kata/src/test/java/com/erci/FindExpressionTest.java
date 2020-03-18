@@ -82,4 +82,39 @@ public class FindExpressionTest {
 
     }
 
+    /**
+     * V大于I，且v等于I的整数倍
+     */
+    @Test
+    public void testWhenVMoreThanI1() {
+        assertEquals("3*3",findExpression.findExpression(3,9));
+
+    }
+
+    /**
+     * V大于I，且v等于I的整数倍
+     */
+    @Test
+    public void testWhenVMoreThanI2() {
+        assertEquals("3*3*3+3*3",findExpression.findExpression(3,36));
+
+    }
+
+    /**
+     * V大于I，且v不等于I的整数倍
+     */
+    @Test
+    public void testWhenVMoreThanI3() {
+        assertEquals("3*3*3+3*3+3/3",findExpression.findExpression(3,37));
+
+    }
+    /**
+     * V大于I，且v不等于I的整数倍
+     */
+    @Test
+    public void testWhenVMoreThanI4() {
+        assertEquals("3+3/3",findExpression.findExpression(3,4));
+
+    }
+
 }
