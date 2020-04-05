@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.erci.FindExpressionTest" time="0.045" tests="15" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.erci.MathEvaluatorTest" time="0.022" tests="33" errors="1" skipped="0" failures="0">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -62,19 +62,41 @@
     <property name="java.class.version" value="52.0"/>
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="testWhenVMoreThan4" classname="com.erci.FindExpressionTest" time="0.002"/>
-  <testcase name="testWhenVLessThanI2" classname="com.erci.FindExpressionTest" time="0"/>
-  <testcase name="testWhenVLessThanI3" classname="com.erci.FindExpressionTest" time="0"/>
-  <testcase name="testWhenVLessThanI4" classname="com.erci.FindExpressionTest" time="0.001"/>
-  <testcase name="testWhenVLessThanI5" classname="com.erci.FindExpressionTest" time="0"/>
-  <testcase name="testWhenVLessThanI6" classname="com.erci.FindExpressionTest" time="0"/>
-  <testcase name="testWhenVLessThanI7" classname="com.erci.FindExpressionTest" time="0"/>
-  <testcase name="testWhenVLessThanI8" classname="com.erci.FindExpressionTest" time="0"/>
-  <testcase name="testWhenVLessThan1" classname="com.erci.FindExpressionTest" time="0"/>
-  <testcase name="testWhenVEqualsI" classname="com.erci.FindExpressionTest" time="0.001"/>
-  <testcase name="testWhenVMoreThanI1" classname="com.erci.FindExpressionTest" time="0"/>
-  <testcase name="testWhenVMoreThanI2" classname="com.erci.FindExpressionTest" time="0.001"/>
-  <testcase name="testWhenVMoreThanI3" classname="com.erci.FindExpressionTest" time="0"/>
-  <testcase name="testWhenVMoreThanI5" classname="com.erci.FindExpressionTest" time="0.001"/>
-  <testcase name="testWhenVMoreThanI6" classname="com.erci.FindExpressionTest" time="0"/>
+  <testcase name="testBeginWithParenthesesAndExpression" classname="com.erci.MathEvaluatorTest" time="0.003"/>
+  <testcase name="testSubAndParenthesesAndOtherOperation" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testSimpleAdd" classname="com.erci.MathEvaluatorTest" time="0.001"/>
+  <testcase name="testSimpleSub" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testSubAndParentheses" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testWhenParenthesesAfterNegative" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testAddNegative" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testOnlyNumber" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testWhenParenthesesAfterNegativeComplex" classname="com.erci.MathEvaluatorTest" time="0.007">
+    <error message="String index out of range: -3" type="java.lang.StringIndexOutOfBoundsException">java.lang.StringIndexOutOfBoundsException: String index out of range: -3
+	at com.erci.MathEvaluatorTest.testWhenParenthesesAfterNegativeComplex(MathEvaluatorTest.java:240)
+</error>
+  </testcase>
+  <testcase name="testMultiplyNegative" classname="com.erci.MathEvaluatorTest" time="0.001"/>
+  <testcase name="testSubAndDivision" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testNegativeAdd" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testBeginWithParenthesesAndPositive" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testSubAndAdd" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testSubAndSub" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testMultiplyAndSub" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testBeginWithParenthesesAndNegative" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testMultiplyAndParentheses" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testMultiplyAndDivision" classname="com.erci.MathEvaluatorTest" time="0.001"/>
+  <testcase name="testSubAndMultiply" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testAddAndMultipy" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testAddAndSub" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testBeginWithParenthesesAndOtherEXpression" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testDivisionNegative" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testSimpleDivision" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testComplex" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testSimpleMultiply" classname="com.erci.MathEvaluatorTest" time="0.001"/>
+  <testcase name="testMultiplyAndParenthesesAndOtherOperation" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testSubNegative" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testNegative" classname="com.erci.MathEvaluatorTest" time="0.001"/>
+  <testcase name="testSimple" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testExpression" classname="com.erci.MathEvaluatorTest" time="0"/>
+  <testcase name="testADDAndAdd" classname="com.erci.MathEvaluatorTest" time="0.001"/>
 </testsuite>

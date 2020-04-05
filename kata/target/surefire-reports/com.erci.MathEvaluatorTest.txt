@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.erci.MathEvaluatorTest
+-------------------------------------------------------------------------------
+Tests run: 33, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.022 s <<< FAILURE! - in com.erci.MathEvaluatorTest
+testWhenParenthesesAfterNegativeComplex(com.erci.MathEvaluatorTest)  Time elapsed: 0.007 s  <<< ERROR!
+java.lang.StringIndexOutOfBoundsException: String index out of range: -3
+	at com.erci.MathEvaluatorTest.testWhenParenthesesAfterNegativeComplex(MathEvaluatorTest.java:240)
+
