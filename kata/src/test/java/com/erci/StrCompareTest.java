@@ -142,7 +142,7 @@ public class StrCompareTest {
     }
 
     /**
-     * 测试数字串包含多个转义字符的情况
+     * 测试字符串包含多个转义字符的情况
      */
     @Test
     public  void testGivenStringContainsMoreThanOneEscapes(){
@@ -151,7 +151,7 @@ public class StrCompareTest {
     }
 
     /**
-     * 数字串和字符串的比较,包含多个和单个子串的情况
+     * 子串即有数字串，又有字符串，不包含转义字符的情况
      */
     @Test
     public  void testGivenStringAndNumber(){
@@ -164,40 +164,51 @@ public class StrCompareTest {
 
 
     /**
-     * 含有一个或者多个子串，且有转义字符,结果相等的情况
+     * 子串即有数字串，又有字符串，至少有一个有转义字符,结果相等的情况
      */
     @Test
     public  void testGivenComplexAndConstainsEscapesWhenEquals(){
         assertEquals(StrCompareConstants.RESULT_EQ,StrCompare.compare("\\23455","\\23455"));
         assertEquals(StrCompareConstants.RESULT_EQ,StrCompare.compare("\\Aabc","\\Aabc"));
         assertEquals(StrCompareConstants.RESULT_EQ,StrCompare.compare("\\Aabc214\\A","\\Aabc214\\A"));
-        assertEquals(StrCompareConstants.RESULT_EQ,StrCompare.compare("\\Aabc214\\A","\\Aabc214\\A"));
         assertEquals(StrCompareConstants.RESULT_EQ,StrCompare.compare("\\Aabc214\\Aabc","\\Aabc214\\Aabc"));
+        assertEquals(StrCompareConstants.RESULT_EQ,StrCompare.compare("234\\A","2405"));
 
     }
     /**
-     * 含有一个或者多个子串，且有转义字符,结果大于的情况
+     * 子串即有数字串，又有字符串，至少有一个有转义字符,结果大于的情况
      */
     @Test
     public  void testGivenComplexAndConstainsEscapesWhenMoreThan(){
-        assertEquals(StrCompareConstants.RESULT_EQ,StrCompare.compare("\\23455","\\23455"));
-        assertEquals(StrCompareConstants.RESULT_EQ,StrCompare.compare("\\Aabc","\\Aabc"));
-        assertEquals(StrCompareConstants.RESULT_EQ,StrCompare.compare("\\Aabc214\\A","\\Aabc214\\A"));
-        assertEquals(StrCompareConstants.RESULT_EQ,StrCompare.compare("\\Aabc214\\A","\\Aabc214\\A"));
-        assertEquals(StrCompareConstants.RESULT_EQ,StrCompare.compare("\\Aabc214\\Aabc","\\Aabc214\\Aabc"));
+        assertEquals(StrCompareConstants.RESULT_MORETHAN,StrCompare.compare("\\23456","\\23455"));
+        assertEquals(StrCompareConstants.RESULT_MORETHAN,StrCompare.compare("\\Aabd","\\Aabc"));
+        assertEquals(StrCompareConstants.RESULT_MORETHAN,StrCompare.compare("\\Aabc214\\a","\\Aabc214\\A"));
+        assertEquals(StrCompareConstants.RESULT_MORETHAN,StrCompare.compare("\\Aabc215\\Aabc","\\Aabc214\\Aabc"));
+        assertEquals(StrCompareConstants.RESULT_MORETHAN,StrCompare.compare("28444","234\\a"));
 
     }
     /**
-     * 含有一个或者多个子串，且有转义字符,结果小于的情况
+     * 子串即有数字串，又有字符串，至少有一个有转义字符,结果小于的情况
      */
     @Test
     public  void testGivenComplexAndConstainsEscapesWhenLessThan(){
-        assertEquals(StrCompareConstants.RESULT_EQ,StrCompare.compare("\\23455","\\23455"));
-        assertEquals(StrCompareConstants.RESULT_EQ,StrCompare.compare("\\Aabc","\\Aabc"));
-        assertEquals(StrCompareConstants.RESULT_EQ,StrCompare.compare("\\Aabc214\\A","\\Aabc214\\A"));
-        assertEquals(StrCompareConstants.RESULT_EQ,StrCompare.compare("\\Aabc214\\A","\\Aabc214\\A"));
-        assertEquals(StrCompareConstants.RESULT_EQ,StrCompare.compare("\\Aabc214\\Aabc","\\Aabc214\\Aabc"));
+        assertEquals(StrCompareConstants.RESULT_LESSTHAN,StrCompare.compare("\\23453","\\23455"));
+        assertEquals(StrCompareConstants.RESULT_LESSTHAN,StrCompare.compare("\\Aabc","\\Abbc"));
+        assertEquals(StrCompareConstants.RESULT_LESSTHAN,StrCompare.compare("\\Aabc214\\A","\\Aabc217\\A"));
+        assertEquals(StrCompareConstants.RESULT_LESSTHAN,StrCompare.compare("\\Aabc214\\Aabc","\\Aabc214\\Aabd"));
+        assertEquals(StrCompareConstants.RESULT_LESSTHAN,StrCompare.compare("\\A21","24887"));
+        assertEquals(StrCompareConstants.RESULT_LESSTHAN,StrCompare.compare("\\A21","24887\\ABC"));
 
     }
 
+    /**
+     * 给定的字符串格式不正确的情况
+     */
+    @Test
+    public  void testGivenInvalidStrThanReturnFailure(){
+        assertEquals(StrCompareConstants.RESULT_INVALID,StrCompare.compare("?ddd","222"));
+
+
+
+    }
 }

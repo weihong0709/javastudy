@@ -13,6 +13,17 @@ public class StrCompare {
     public static int compare(String s1,String s2){
             return compare(splitStr(s1),splitStr(s2));
         }
+        private boolean isValid(String s1,String s2){
+            String regEx = "^0+";
+            Pattern pattern = Pattern.compile(regEx);
+            Matcher matcher = pattern.matcher(str);
+            if (matcher.find()){
+                String zeroStr =  matcher.group();
+                return zeroStr.length();
+            }
+            return 0;
+
+        }
 
         public static  Queue<StrInfo> splitStr(String str){
             Queue<StrInfo> queue = new LinkedList<StrInfo>();
@@ -210,7 +221,6 @@ public class StrCompare {
 
 
     private static  int getZeroCount(String str){
-
         String regEx = "^0+";
         Pattern pattern = Pattern.compile(regEx);
         Matcher matcher = pattern.matcher(str);

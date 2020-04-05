@@ -4,6 +4,7 @@ public class StrCompareConstants {
     public static final int RESULT_LESSTHAN=-1;
     public static final int RESULT_EQ=0;
     public static final int RESULT_MORETHAN=1;
+    public static final int RESULT_INVALID=-2;
     public static final int STR_TYPE_NUMBER = 1;
     public static final int STR_TYPE_STR = 2;
     public static final int STR_TYPE_ESCAPES = 3;
