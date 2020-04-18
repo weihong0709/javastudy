@@ -11,4 +11,11 @@ public class StrCompareConstants {
     public static final int ASCII_NUMBER_BEGIN = 48;
     public static final int ASCII_NUMBER_END = 57;
     public static final int ASCII_ESCAPES = 92;
+
+    public static final int ASCII_UPPERCASE_LETTER_BEGIN = 65;
+    public static final int ASCII_UPPERCASE_LETTER_END = 90;
+
+    public static final int ASCII_LOWERCASE_LETTER_BEGIN = 97;
+    public static final int ASCII_LOWERCASE_LETTER_END = 122;
+
 }
