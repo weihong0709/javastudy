@@ -67,13 +67,13 @@ public class FutureExample {
 
         ExecutorService executorService = Executors.newFixedThreadPool(5);
         Runnable runnable = () -> {
-            Thread.sleep(10000);
-            return "thread 1";
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         };
-        CompletableFuture completableFuture = CompletableFuture.runAsync(runnable);
-        completableFuture.whenComplete((t)->{
-            return "test";
-        })
+
         CompletionService<String> completionService = new ExecutorCompletionService(executorService);
 
         Callable<String> futrueOne = () -> {
