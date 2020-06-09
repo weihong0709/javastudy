@@ -1,5 +1,12 @@
 package com.eric;
 
+<<<<<<< HEAD
+public class MathEvaluator {
+
+    public double evaluator(String expression){
+        return 0;
+    }
+=======
 
 
 import java.util.ArrayList;
@@ -251,4 +258,5 @@ public class MathEvaluator {
         }
     }
 
+>>>>>>> 0b225cae4015f04753d1124e04b00f203a083752
 }

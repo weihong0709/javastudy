@@ -63,7 +63,7 @@ public class FutureExample {
             e.printStackTrace();
         }
     }
-    /*public static void futureThree() {
+    public static void futureThree() {
 
         ExecutorService executorService = Executors.newFixedThreadPool(5);
         Runnable runnable = () -> {
@@ -73,10 +73,7 @@ public class FutureExample {
                 e.printStackTrace();
             }
         };
-        CompletableFuture completableFuture = CompletableFuture.runAsync(runnable);
-        completableFuture.whenComplete((t)->{
-            return "test";
-        });
+
         CompletionService<String> completionService = new ExecutorCompletionService(executorService);
 
         Callable<String> futrueOne = () -> {
@@ -107,7 +104,7 @@ public class FutureExample {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
 
 
