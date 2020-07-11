@@ -36,6 +36,7 @@ public class BioServer {
                     System.arraycopy(recvBuf, 0, temp, 0, recvMsgSize);
                     System.out.println(new String(temp));
                 }
+                out.write(100);
             }
         }
         catch (IOException e)
