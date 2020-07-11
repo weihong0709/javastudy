@@ -26,15 +26,7 @@ public class BioServer {
                 clntSocket.setSendBufferSize(10);
                 clntSocket.setReceiveBufferSize(10);
                 //连接检测
-
                 clntSocket.setKeepAlive(true);
-                clntSocket.setOOBInline();
-                clntSocket.setReuseAddress();
-                clntSocket.setSoLinger(true,10);
-                clntSocket.setSoTimeout();
-                clntSocket.setTcpNoDelay();
-                clntSocket.setPerformancePreferences();
-                clntSocket.setTrafficClass();
                 SocketAddress clientAddress = clntSocket.getRemoteSocketAddress();
                 System.out.println("Handling client at "+clientAddress);
                 in = clntSocket.getInputStream();
