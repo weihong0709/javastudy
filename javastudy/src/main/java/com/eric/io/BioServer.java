@@ -23,20 +23,22 @@ public class BioServer {
             while(true){
                 Socket clntSocket = serverSocket.accept();
                 //设置发送缓冲区的大小
-                clntSocket.setSendBufferSize(10);
-                clntSocket.setReceiveBufferSize(10);
+                clntSocket.setSendBufferSize(100);
+                clntSocket.setReceiveBufferSize(100);
                 //连接检测
                 clntSocket.setKeepAlive(true);
                 SocketAddress clientAddress = clntSocket.getRemoteSocketAddress();
                 System.out.println("Handling client at "+clientAddress);
                 in = clntSocket.getInputStream();
                 out = clntSocket.getOutputStream();
+                System.out.println("begin receive");
                 while((recvMsgSize=in.read(recvBuf))!=-1){
+                    System.out.println("recvMsgSize:"+recvMsgSize);
                     byte[] temp = new byte[recvMsgSize];
                     System.arraycopy(recvBuf, 0, temp, 0, recvMsgSize);
                     System.out.println(new String(temp));
+                    out.write("hello client".getBytes());
                 }
-                out.write(100);
             }
         }
         catch (IOException e)
