@@ -18,6 +18,7 @@ public class BioServer {
             serverSocket = new ServerSocket(8080,50);
             //设置接收缓冲区的大小
             serverSocket.setReceiveBufferSize(100);
+
             int recvMsgSize = 0;
             byte[] recvBuf = new byte[1024];
             while(true){

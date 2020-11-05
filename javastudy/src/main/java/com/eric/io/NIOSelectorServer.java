@@ -46,7 +46,7 @@ public class NIOSelectorServer {
         buf.flip();
         SocketChannel sc = (SocketChannel) key.channel();
         while(buf.hasRemaining()){
-            //此处有返回值没有处理，此处根据市阻塞IO还是非阻塞IO，返回值的情况不一样
+            //此处有返回值没有处理，此处根据是阻塞IO还是非阻塞IO，返回值的情况不一样
             //阻塞IO的话，写完为止，非阻塞IO为实际写入的字节数
             sc.write(buf);
         }
