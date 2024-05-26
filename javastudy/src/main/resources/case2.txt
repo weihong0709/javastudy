@@ -1,0 +1,57 @@
+[
+    {
+        "description": "有效输入，能完美匹配",
+        "input": "10 5 10 1 10 1 10 1 5 2 5 2",
+        "expected_output": "Y"
+    },
+    {
+        "description": "有效输入，不能完美匹配",
+        "input": "10 5 10 2 10 2 10 1 5 2",
+        "expected_output": "N"
+    },
+    {
+        "description": "输入字符串中数字个数不是偶数",
+        "input": "10 5 10 1 10 1 10 1 5",
+        "expected_output": "E1"
+    },
+    {
+        "description": "输入的字符串中，数字之间的间隔不是单个空格",
+        "input": "10  5 10 1 10 1 10 1 5 2 5 2",
+        "expected_output": "E2"
+    },
+    {
+        "description": "矩形区域长小于等于0",
+        "input": "0 5 10 1 10 1 10 1 5 2 5 2",
+        "expected_output": "E3"
+    },
+    {
+        "description": "矩形区域宽小于等于0",
+        "input": "10 0 10 1 10 1 10 1 5 2 5 2",
+        "expected_output": "E3"
+    },
+    {
+        "description": "所有木板的总面积不等于矩形区域的面积",
+        "input": "10 5 10 1 10 1 10 1 5 2",
+        "expected_output": "E4"
+    },
+    {
+        "description": "输入中有多种异常，返回其中一个异常编号即可",
+        "input": "10 -5 10 1 10 1 10 1 5 2 5 2",
+        "expected_output": "E3"
+    },
+    {
+        "description": "矩形区域和木片都为边界值 1",
+        "input": "1 1 1 1",
+        "expected_output": "Y"
+    },
+    {
+        "description": "矩形区域和木片都为边界值 2",
+        "input": "2 2 2 1 1 1 1 1",
+        "expected_output": "Y"
+    },
+    {
+        "description": "输入字符串中包含非数字字符",
+        "input": "10 5 10 1 10 a 10 1 5 2 5 2",
+        "expected_output": "E1"
+    }
+]

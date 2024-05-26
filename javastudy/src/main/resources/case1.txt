@@ -1,0 +1,74 @@
+[
+    {
+        "test_case_id": "TC1",
+        "description": "小木块的长和宽与矩形区域一致",
+        "input": "10 5 10 5",
+        "expected_output": "Y"
+    },
+    {
+        "test_case_id": "TC2",
+        "description": "所有小木块的长与矩形区域一致，宽不一致",
+        "input": "10 5 10 2 10 2 10 1",
+        "expected_output": "Y"
+    },
+    {
+        "test_case_id": "TC3",
+        "description": "部分小木块的长与矩形区域一致，宽不一致",
+        "input": "12 4 6 2 6 2 6 2 6 2",
+        "expected_output": "Y"
+    },
+    {
+        "test_case_id": "TC4",
+        "description": "边界值测试，矩形区域和木片为1x1",
+        "input": "1 1 1 1",
+        "expected_output": "Y"
+    },
+    {
+        "test_case_id": "TC5",
+        "description": "边界值测试，矩形区域为最大值100x100",
+        "input": "100 100 100 100",
+        "expected_output": "Y"
+    },
+    {
+        "test_case_id": "TC6",
+        "description": "所有小木块的长与矩形区域一致，但宽不一致，边界值",
+        "input": "15 5 15 2 15 2 15 1",
+        "expected_output": "Y"
+    },
+    {
+        "test_case_id": "TC7",
+        "description": "部分小木块的长与矩形区域一致，但宽不一致，边界值",
+        "input": "8 4 4 2 4 2 4 2 4 2",
+        "expected_output": "Y"
+    },
+    {
+        "test_case_id": "TC8",
+        "description": "混合情况，小木块的长和宽部分与矩形区域一致",
+        "input": "20 10 10 5 10 5 20 5 20 5",
+        "expected_output": "Y"
+    },
+    {
+        "test_case_id": "TC9",
+        "description": "小木块的长与矩形区域一致，宽不一致且面积相等",
+        "input": "12 6 12 3 12 3 12 3 12 3",
+        "expected_output": "Y"
+    },
+    {
+        "test_case_id": "TC10",
+        "description": "矩形区域为最大值50x50，所有木片的长与矩形区域一致",
+        "input": "50 50 50 25 50 25 50 25 50 25",
+        "expected_output": "Y"
+    },
+    {
+        "test_case_id": "TC11",
+        "description": "小木块的长和宽都不一致，但能完美匹配",
+        "input": "20 10 10 5 5 5 5 5 5 5",
+        "expected_output": "Y"
+    },
+    {
+        "test_case_id": "TC12",
+        "description": "小木块的长和宽都不一致，边界值测试",
+        "input": "30 15 15 5 15 5 10 10 10 5 10 5",
+        "expected_output": "Y"
+    }
+]
